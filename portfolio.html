@@ -6,57 +6,122 @@
     <title>Projects - Rachit Kushwaha</title>
     <link rel="stylesheet" href="src/style.css">
     <style>
+        /* General Styles */
+        body {
+            background-color: #1e1e1e; /* Match the dark background */
+            color: #f1f1f1; /* Light text for readability */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Header Style */
+        .header {
+            background-color: #333; /* Dark background for header */
+            padding: 20px;
+            text-align: center;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .nav-link {
+            color: #f1f1f1; /* Light text for navigation */
+            font-size: 18px;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: #444; /* Slightly darker hover effect */
+            color: #fff;
+        }
+
+        /* Main Content Style */
         .intro, .section-title {
             text-align: center;
             margin-top: 20px;
         }
+
         .project-links {
             display: flex;
             justify-content: center;
             margin: 20px 0;
         }
+
         .project-link {
-            margin: 0 10px;
+            margin: 0 15px;
             padding: 10px 20px;
-            border: 2px solid #333;
+            border: 2px solid #f1f1f1;
             border-radius: 5px;
             text-decoration: none;
-            color: #333;
+            color: #f1f1f1;
             transition: background-color 0.3s, color 0.3s;
         }
+
         .project-link:hover {
-            background-color: #333;
-            color: #fff;
+            background-color: #f1f1f1;
+            color: #333;
         }
+
         .thumbnail-section {
             display: none;
             margin: 20px 0;
         }
+
         .thumbnail-section.active {
             display: block;
         }
+
         .thumbnail-section h3 {
             text-align: center;
+            margin-bottom: 20px;
         }
+
         .thumbnails {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
         }
+
         .thumbnail {
             margin: 10px;
-            border: 1px solid #333;
+            border: 1px solid #f1f1f1;
             border-radius: 5px;
             overflow: hidden;
-            transition: transform 0.3s;
+            transition: transform 0.3s ease;
         }
+
         .thumbnail img {
             width: 100%;
             height: auto;
         }
+
         .thumbnail:hover {
             transform: scale(1.05);
         }
+
+        /* Footer Style */
+        .footer {
+            background-color: #333;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .footer p {
+            color: #f1f1f1;
+        }
+
     </style>
 </head>
 <body id="body" class="dark" oncontextmenu="return false">
@@ -87,7 +152,6 @@
                 <div class="thumbnail">
                     <img src="https://via.placeholder.com/150" alt="Vlog Thumbnail 2">
                 </div>
-                <!-- Add more vlog thumbnails as needed -->
             </div>
         </section>
 
@@ -100,7 +164,6 @@
                 <div class="thumbnail">
                     <img src="https://via.placeholder.com/150" alt="Gaming Thumbnail 2">
                 </div>
-                <!-- Add more gaming thumbnails as needed -->
             </div>
         </section>
 
@@ -113,7 +176,6 @@
                 <div class="thumbnail">
                     <img src="https://via.placeholder.com/150" alt="Marketing Thumbnail 2">
                 </div>
-                <!-- Add more marketing thumbnails as needed -->
             </div>
         </section>
 
@@ -126,7 +188,6 @@
                 <div class="thumbnail">
                     <img src="https://via.placeholder.com/150" alt="Fitness Thumbnail 2">
                 </div>
-                <!-- Add more fitness thumbnails as needed -->
             </div>
         </section>
     </main>
