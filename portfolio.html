@@ -29,7 +29,11 @@
             color: #fff;
         }
         .thumbnail-section {
+            display: none;
             margin: 20px 0;
+        }
+        .thumbnail-section.active {
+            display: block;
         }
         .thumbnail-section h3 {
             text-align: center;
@@ -60,7 +64,7 @@
         <h1>Projects</h1>
         <nav>
             <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
+            <a href="projects.html">Portfolio</a>
         </nav>
     </header>
 
@@ -69,13 +73,13 @@
             <p>I work for Vardaan Malhan, Meher Malhan, Werstupid, Gaurav Shrivastava</p>
         </section>
         <section class="project-links">
-            <a href="https://youtube.com/channel/UCVardaanMalhan" class="project-link">Vardaan Malhan</a>
-            <a href="https://youtube.com/channel/UCMeherMalhan" class="project-link">Meher Malhan</a>
-            <a href="https://youtube.com/channel/UCWerstupid" class="project-link">Werstupid</a>
-            <a href="https://youtube.com/channel/UCGauravShrivastava" class="project-link">Gaurav Shrivastava</a>
+            <a href="#" class="project-link" data-section="vlogs">Vlogs Thumbnails</a>
+            <a href="#" class="project-link" data-section="gaming">Gaming Thumbnails</a>
+            <a href="#" class="project-link" data-section="marketing">Digital Marketing Thumbnails</a>
+            <a href="#" class="project-link" data-section="fitness">Fitness Thumbnails</a>
         </section>
 
-        <section class="thumbnail-section">
+        <section id="vlogs" class="thumbnail-section">
             <h3 class="section-title">Vlogs Thumbnails</h3>
             <div class="thumbnails">
                 <div class="thumbnail">
@@ -88,7 +92,7 @@
             </div>
         </section>
 
-        <section class="thumbnail-section">
+        <section id="gaming" class="thumbnail-section">
             <h3 class="section-title">Gaming Thumbnails</h3>
             <div class="thumbnails">
                 <div class="thumbnail">
@@ -101,7 +105,7 @@
             </div>
         </section>
 
-        <section class="thumbnail-section">
+        <section id="marketing" class="thumbnail-section">
             <h3 class="section-title">Digital Marketing Thumbnails</h3>
             <div class="thumbnails">
                 <div class="thumbnail">
@@ -114,7 +118,7 @@
             </div>
         </section>
 
-        <section class="thumbnail-section">
+        <section id="fitness" class="thumbnail-section">
             <h3 class="section-title">Fitness Thumbnails</h3>
             <div class="thumbnails">
                 <div class="thumbnail">
@@ -131,5 +135,18 @@
     <footer>
         <p>&copy; 2025 Rachit Kushwaha</p>
     </footer>
+
+    <script>
+        document.querySelectorAll('.project-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                document.querySelectorAll('.thumbnail-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                const sectionId = this.dataset.section;
+                document.getElementById(sectionId).classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
