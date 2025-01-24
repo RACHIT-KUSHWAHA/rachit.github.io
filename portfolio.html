@@ -8,11 +8,12 @@
     <style>
         /* General Styles */
         body {
-            background-color: #1e1e1e; /* Match the dark background */
-            color: #f1f1f1; /* Light text for readability */
+            background-color: #1a1a2e; /* Dark purple background */
+            color: #f5f5f5; /* Light text for readability */
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         a {
@@ -21,9 +22,10 @@
 
         /* Header Style */
         .header {
-            background-color: #333; /* Dark background for header */
+            background-color: #1e1e2f; /* Darker purple for header */
             padding: 20px;
             text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .navbar {
@@ -33,49 +35,74 @@
         }
 
         .nav-link {
-            color: #f1f1f1; /* Light text for navigation */
+            color: #f5f5f5;
             font-size: 18px;
             text-transform: uppercase;
             padding: 10px 20px;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .nav-link:hover {
-            background-color: #444; /* Slightly darker hover effect */
+            background-color: #6a4c9c; /* Purple hover effect */
             color: #fff;
         }
 
+        .button {
+            background-color: #6a4c9c;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 5px;
+            margin: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #5b3e8b; /* Slightly darker purple */
+        }
+
         /* Main Content Style */
-        .intro, .section-title {
+        .intro {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 40px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .intro p {
+            margin: 10px 0;
+            font-size: 20px;
         }
 
         .project-links {
             display: flex;
             justify-content: center;
-            margin: 20px 0;
+            margin: 40px 0;
+            gap: 15px;
         }
 
         .project-link {
-            margin: 0 15px;
-            padding: 10px 20px;
-            border: 2px solid #f1f1f1;
+            padding: 15px 30px;
             border-radius: 5px;
-            text-decoration: none;
-            color: #f1f1f1;
-            transition: background-color 0.3s, color 0.3s;
+            background-color: #6a4c9c;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .project-link:hover {
-            background-color: #f1f1f1;
-            color: #333;
+            background-color: #5b3e8b;
+            transform: translateY(-5px);
         }
 
         .thumbnail-section {
             display: none;
-            margin: 20px 0;
+            margin: 40px 0;
         }
 
         .thumbnail-section.active {
@@ -84,7 +111,9 @@
 
         .thumbnail-section h3 {
             text-align: center;
+            font-size: 28px;
             margin-bottom: 20px;
+            color: #fff;
         }
 
         .thumbnails {
@@ -95,10 +124,10 @@
 
         .thumbnail {
             margin: 10px;
-            border: 1px solid #f1f1f1;
+            border: 2px solid #fff;
             border-radius: 5px;
             overflow: hidden;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .thumbnail img {
@@ -108,20 +137,42 @@
 
         .thumbnail:hover {
             transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
         /* Footer Style */
         .footer {
-            background-color: #333;
+            background-color: #1e1e2f;
             text-align: center;
             padding: 20px;
             margin-top: 40px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .footer p {
-            color: #f1f1f1;
+            color: #f5f5f5;
         }
 
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .project-links {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .thumbnails {
+                flex-direction: column;
+            }
+
+            .button {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body id="body" class="dark" oncontextmenu="return false">
@@ -134,8 +185,10 @@
 
     <main>
         <section class="intro">
-            <p>I work for Vardaan Malhan, Meher Malhan, Werstupid, Gaurav Shrivastava</p>
+            <p>Welcome to my creative portfolio! Explore my work across different categories and discover the thumbnails I’ve designed for top creators and brands.</p>
+            <button class="button" onclick="window.location.href='index.html'">Go to Home</button>
         </section>
+
         <section class="project-links">
             <a href="#" class="project-link" data-section="vlogs">Vlogs Thumbnails</a>
             <a href="#" class="project-link" data-section="gaming">Gaming Thumbnails</a>
